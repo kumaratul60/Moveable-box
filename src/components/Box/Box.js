@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import MovingBox from "../MovingBox";
 
-class BoxAssignment extends Component {
+class BoxContainer extends Component {
     constructor(props) {
         super(props);
 
         this.addBox = this.addBox.bind(this);
-        // this.toggleAllListeners = this.toggleAllListeners.bind(this);
+        this.resetBox = this.resetBox.bind(this);
+        this.toggleAllListeners = this.toggleAllListeners.bind(this);
 
         this.state = {
             currentBoxId: 0,
@@ -16,6 +17,11 @@ class BoxAssignment extends Component {
             blockEvent: false,
             toggleImage: "https://img.icons8.com/color/48/000000/toggle-on.png",
         };
+    }
+
+    // Reset the box
+    resetBox() {
+        this.setState({ boxes: [] });
     }
 
     //Delete the box
@@ -115,6 +121,10 @@ class BoxAssignment extends Component {
 
                     case "Delete":
                         this.deleteBox(id);
+                        break;
+
+                    default:
+                        this.resetBox();
                 }
             } else {
                 if (movePixels === 5) {
@@ -185,20 +195,28 @@ class BoxAssignment extends Component {
                 id="boundary"
                 className="container card"
                 style={{
-                    width: "500px",
-                    maxWidth: "550px",
-                    minHeight: "400px",
-                    ht: "400",
+                    width: "900px",
+                    maxWidth: "950px",
+                    minHeight: "700px",
+
                     top: "5rem",
                 }}
             >
                 {/* Button for adding more boxes */}
+
                 <h3
                     onClick={this.addBox}
                     className="btn btn-primary"
                     style={{ margin: "10px auto 10px auto" }}
                 >
                     Add Box
+                </h3>
+                <h3
+                    onClick={this.resetBox}
+                    className="btn btn-warning"
+                    style={{ margin: "10px auto 10px auto" }}
+                >
+                    Reset Box
                 </h3>
 
                 {/* Toggle button for blocking keyboard operations (event listeners) */}
@@ -243,4 +261,4 @@ class BoxAssignment extends Component {
     }
 }
 
-export default BoxAssignment;
+export default BoxContainer;
