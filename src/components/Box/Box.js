@@ -124,7 +124,6 @@ class BoxContainer extends Component {
                         break;
 
                     default:
-                        this.resetBox();
                 }
             } else {
                 if (movePixels === 5) {
@@ -197,7 +196,7 @@ class BoxContainer extends Component {
                 style={{
                     width: "900px",
                     maxWidth: "950px",
-                    minHeight: "700px",
+                    minHeight: "500px",
 
                     top: "5rem",
                 }}
