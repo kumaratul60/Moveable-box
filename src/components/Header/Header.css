@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    color: rgb(144, 0, 255);
+    background-color: whitesmoke;
+    border-bottom: 1px solid aqua;
+    box-shadow: 0 1px 0 0 #333;
+
+
+}
