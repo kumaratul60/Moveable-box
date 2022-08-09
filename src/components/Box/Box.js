@@ -92,24 +92,28 @@ class BoxContainer extends Component {
                 switch (event.key) {
                     case "w":
                     case "W":
+                    case "ArrowUp":
                         if (box.offsetTop >= 10)
                             box.style.top =
                                 parseInt(box.style.top) - movePixels + "px";
                         break;
                     case "s":
                     case "S":
+                    case "ArrowDown":
                         if (bottomBound >= 10)
                             box.style.top =
                                 parseInt(box.style.top) + movePixels + "px";
                         break;
                     case "a":
                     case "A":
+                    case "ArrowLeft":
                         if (box.offsetLeft >= 10)
                             box.style.left =
                                 parseInt(box.style.left) - movePixels + "px";
                         break;
                     case "d":
                     case "D":
+                    case "ArrowRight":
                         if (rightBound >= 10)
                             box.style.left =
                                 parseInt(box.style.left) + movePixels + "px";
